@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import { useState } from 'react';
+import Header from '../Shared/Header';
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
@@ -12,6 +13,7 @@ const Layout = () => {
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className='w-full'>
         <div className={`relative bg-navy h-full pl-[46px] pr-5 pt-[76px] pb-28 shadow-panel rounded-[35px] ${isOpen ? '' :' ml-4'}`}>
+          <Header/>
           <Outlet />
         </div>
       </div>

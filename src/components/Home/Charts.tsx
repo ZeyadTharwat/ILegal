@@ -6,7 +6,7 @@ const Charts = () => {
     <div className="rounded-[10px] px-16 py-20 bg-white col-span-3">
     <div className="pb-10  border-b-[3px] mb-10 border-[#C4C4C4D6] flex justify-between items-center">
       <h1 className="text-black font-bold text-[32px]">Tenants Analysis</h1>
-      <Link className="underline font-medium text-navy" to={''}>
+      <Link className="underline font-medium text-navy" to={'/dashboard/tenants-analysis'}>
         See all
       </Link>
     </div>

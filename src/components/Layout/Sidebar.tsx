@@ -76,14 +76,14 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
         <>
             <motion.aside
                 animate={{ minWidth: isOpen ? "260px" : "120px" }}
-                className={` pb-[53px] mr-0 whitespace-nowrap  relative  left-0 flex flex-col justify-between z-50  pt-4 `}
+                className={` pb-[53px] mr-0 whitespace-nowrap  relative  left-0 flex flex-col justify-between z-50 `}
             >
                 <div onClick={() => setIsOpen(!isOpen)}
                     className={`absolute cursor-pointer h-full w-full transition-all duration-300 bg-gradient-blue ${isOpen ? 'opacity-0' : 'rounded-[35px] shadow-panel opacity-100'}`} />
                 <div>
                     <div className="mx-auto relative">
                         <Link
-                            className="flex items-center gap-1 w-full justify-center mt-24"
+                            className="flex items-center gap-1 w-full justify-center mt-24 h-12"
                             to="/"
                         >
                             {isOpen ? <img src={FullLogo} /> : <img src={Logo} />}
@@ -102,13 +102,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
                                             `/${child.title.toLowerCase().split(" ").join("-")}`;
                                         return (
                                             <NavLink
-                                                to={`${child.title.toLowerCase().split(" ").join("-")}`}
-                                                className={({ isActive: isNavLinkActive }) =>
+                                                to={`/dashboard/${child.title.toLowerCase().split(" ").join("-")}`}
+                                                className={() =>
                                                     clsx(
-                                                        "relative h-[50px] max-w-[192px] cursor-pointer transition w-full rounded-lg items-center gap-1.5 flex ",
-                                                        {
-                                                            "bg-lightBlue !text-white": isNavLinkActive,
-                                                        }
+                                                        "relative h-[50px] max-w-[192px] cursor-pointer transition w-full rounded-lg items-center gap-1.5 flex "
                                                     )
                                                 }
                                             >
